@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>banner css3 jquery</title>
+<script src="js/jquery-1.8.3.min.js"></script>
+<style>
+html, body, div, ul, li, p, a {
+	margin: 0 auto;
+	padding: 0;
+}
+ul {
+	list-style: none;
+}
+.banner {
+	position: relative;
+	width: 100%;
+	height: 500px;
+	overflow: hidden;
+	line-height: 500px;
+	text-align: center;
+}
+.btn {
+	position: absolute;
+	top: 80%;
+	left: 50%;
+}
+.content li, .btn li {
+	float: left;
+}
+.content li{ height:500px;}
+.display_none {
+	display: none;
+}
+.content li:nth-child(even) {
+	background: #FCC;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.content li:nth-child(odd) {
+	background: #FFC;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.clear {
+	clear: both;
+}
+.btn li {
+	width: 25px;
+	height: 25px;
+	line-height: 25px;
+	background: #99F;
+	margin-right: 10px;
+	border-radius: 50%;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+}
+.btn li.active {
+	background: #990000;
+	color: #fff;
+}
+.rolate {
+	animation: rolate 1s ease-out;
+	-webkit-animation: rolate 1s ease-out;
+}
+.cicle {
+	animation: cicle 0.5s ease-out;
+	-webkit-animation: cicle 0.5s ease-out;
+}
+.content li img {
+	width: 20%;
+	max-width: 20%;
+}
+.img_active {
+	animation: myfirst 2s alternate;
+	-moz-animation: img_active 2s alternate;
+	-webkit-animation: img_active 2s alternate;
+	-o-animation: img_active 2s alternate;
+}
+@keyframes img_active {
+ 0% {
+transform:rotate(0deg)
+}
+ 100% {
+transform:rotate(-360deg)
+}
+}
+@-webkit-keyframes img_active {
+ 0% {
+transform:rotate(0deg)
+}
+ 100% {
+transform:rotate(-360deg)
+}
+}
+@-moz-keyframes img_active {
+ 0% {
+transform:rotate(-60deg)
+}
+ 50% {
+transform:rotate(-180deg)
+}
+ 100% {
+transform:rotate(-300deg)
+}
+}
+.text{
+	background: red;
+    position:relative;
+	padding: 15px;
+	animation: myfirst 3s linear 1 forwards;
+	-moz-animation: myfirst 3s linear 1 forwards; /* Firefox */
+	-webkit-animation: myfirst 3s linear 1 forwards; /* Safari and Chrome */
+	-o-animation: myfirst 3s linear 1 forwards; /* Opera */
+}
+@keyframes myfirst {
+0% {
+background:red;
+left:0px;
+top:0px;
+}
+25% {
+background:yellow;
+left:200px;
+top:0px;
+}
+50% {
+background:blue;
+left:200px;
+top:200px;
+}
+75% {
+background:green;
+left:0px;
+top:200px;
+}
+100% {
+background:red;
+left:0px;
+top:0px;
+}
+}
+ @-moz-keyframes myfirst /* Firefox */ {
+0% {
+background:red;
+left:0px;
+top:0px;
+}
+25% {
+background:yellow;
+left:200px;
+top:0px;
+}
+50% {
+background:blue;
+left:200px;
+top:200px;
+}
+75% {
+background:green;
+left:0px;
+top:200px;
+}
+100% {
+background:red;
+left:0px;
+top:0px;
+}
+}
+ @-webkit-keyframes myfirst /* Safari and Chrome */ {
+0% {
+background:red;
+left:0px;
+top:0px;
+}
+25% {
+background:yellow;
+left:200px;
+top:0px;
+}
+50% {
+background:blue;
+left:200px;
+top:200px;
+}
+75% {
+background:green;
+left:0px;
+top:200px;
+}
+100% {
+background:red;
+left:0px;
+top:0px;
+}
+}
+ @-o-keyframes myfirst /* Opera */ {
+0% {
+background:red;
+left:0px;
+top:0px;
+}
+25% {
+background:yellow;
+left:200px;
+top:0px;
+}
+50% {
+background:blue;
+left:200px;
+top:200px;
+}
+75% {
+background:green;
+left:0px;
+top:200px;
+}
+100% {
+background:red;
+left:0px;
+top:0px;
+}
+}
+.img_move{ animation:img_move 3s linear .2s forwards; position:relative; right:0; top:0; opacity:0;}
+@keyframes img_move{
+ 0%{ right:0; top:0; opacity:0;}
+ 50%{ right:-200px; top:-50px; opacity:0.5;}
+ 100%{ right:-400px; top:-150px; opacity:1;}	
+}
+@-webkit-keyframes img_move{
+	0%{ right:0; top:0; opacity:0;}
+    50%{ right:-200px; top:-50px; opacity:0.5;}
+    100%{ right:-400px; top:-150px; opacity:1;}	
+}
+.img_move_text{ animation:img_move_text 3s ease-in .1s forwards ; position:relative; right:0; top:0;}
+@keyframes img_move_text{
+ from{ right:-500px; top:0;}
+ to{ right:500px; top:200px;}	
+}
+@-webkit-keyframes img_move_text{
+ 	from{ right:-500px; top:0;}
+    to{ right:500px; top:200px;}	
+}
+</style>
+</head>
+
+<body>
+<div class="banner">
+  <ul class="content">
+    <li ><span class="text" >第一个</span><img src="images/banner2-1.png" class="img_active" /></li>
+    <li class="display_none"><img src="images/banner2-3.png" class="img_move"/><img src="images/1383533951.png" class="img_move_text"/></li>
+    <li class="display_none">第三个</li>
+  </ul>
+  <ul class="btn">
+  </ul>
+</div>
+<script>
+//alert($('.content>li').length);
+$(function(){
+   function banner(){
+    for(var i=1;i<=$('.content>li').length;i++){
+ 	   btn=$('<li>'+i+'</li>').appendTo($('.btn'));
+    }
+	$('.btn>li').eq(0).addClass('active');
+$('.btn>li').mouseover(function(){show($(this).index())})
+
+var index=1;
+var interval;
+interval = setInterval(function(){
+								show(index);
+								index++;
+								if(index==$('.content>li').length){index = 0}
+								}, "5000");  
+	function show(index){
+		$('.btn>li').eq(index).addClass('active').siblings().removeClass('active');
+		$('.content>li').hide().eq(index).fadeIn().show();
+	}
+}
+  banner();
+})
+/*window.onload=function banner(){
+ for(var i=1;i<=$('.content>li').length;i++){
+ 	   btn=$('<li>'+i+'</li>').appendTo($('.btn'));//根据内容的多少添加btn中li的个数
+    }
+	$('.btn>li').eq(0).addClass('active');//第一个li默认为选中状态
+$('.btn>li').click( function(){
+	setTimeout(show(),3000);
+	show($(this).index())})//点击li时执行show方法，参数为li的索引值
+
+var index=1;
+var interval;
+interval = setInterval(function(){
+	show(index);
+	index++;
+	if(index==$('.content>li').length){index = 0}
+	}, "3000"); //setinterval方法则是表示间隔一定时间反复执行某操作 
+  
+  function show(index){
+		$('.btn>li').eq(index).addClass('active').siblings().removeClass('active');
+		$('.content>li').hide().eq(index).fadeIn().show();
+	}
+
+}
+*/	
+//}
+</script>
+</body>
+</html>

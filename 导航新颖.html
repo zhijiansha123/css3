@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>新颖导航</title>
+<script src="js/jquery-1.8.3.min.js" ></script>
+<style>
+a{ text-decoration:none;}
+body{}
+.btn,.nav_01,.nav_02,.nav_03,.nav_04{position:absolute; left:350px; top:350px;   cursor:pointer;}
+.nav_01,.nav_02,.nav_03,.nav_04{ width:50px; height:50px; background:#fff; border:solid 2px #000; }
+.btn{ width:100px; height:100px; background:#ddd; border:solid 2px #990000;  left:325px; top:325px; z-index:999;}
+.nav_01_hover{ animation:nav_01 ease-in 0.5s forwards alternate;}
+@keyframes nav_01{
+ 0%{ left:350px; top:350px;}
+ 100%{ left:200px; top:350px; transform:rotate(-90deg)}	
+}
+.nav_02_hover{animation:nav_02 ease-in 0.5s forwards alternate;}
+@keyframes nav_02{
+ 0%{ left:350px; top:350px;}
+ 100%{ left:220px; top:270px; transform:rotate(-180deg)}	
+}
+.nav_03_hover{animation:nav_03 ease-in 0.5s forwards alternate;}
+@keyframes nav_03{
+ 0%{ left:350px; top:350px;}
+ 100%{ left:250px; top:200px; transform:rotate(-270deg)}	
+}
+.nav_04_hover{animation:nav_04 ease-in 0.5s forwards alternate;}
+@keyframes nav_04{
+ 0%{ left:350px; top:350px;}
+ 100%{ left:325px; top:120px; transform:rotate(-360deg)}	
+}
+.dis_none{ display:none;}
+.active{background:#000; border:solid 2px #990000; transition:all ease-in 0.5s;}
+.close{ animation:close 0.5s ease-in alternate forwards;}
+@keyframes close{
+  0%{ left:260px; top:200px;}
+  100%{ left:350px; top:350px; transform:rotate(270deg)}  	
+}
+/*transtion 过渡 转换*/
+.wrap{ position:relative; width:1000px; height:500px; background:#999; }
+.menu{ position:absolute; right:0; bottom:0; z-index:999;}
+.menu_btn{ width:50px; height:50px; border-radius:50%; position:absolute; -webkit-transition:all .2s,right .2s;-moz-transition:all .2s,right .2s;-o-transition:ll .2s,right .2s;-ms-transition:all .2s,right .2s;transition:all .2s,right .2s; line-height:50px; text-align:center;}
+.btn_01{ background:#fff; border:solid 5px #33CC99; right:25px; bottom:25px;}
+.btn_02{ background:#CFF; border:solid 5px #990000; right:25px; bottom:25px;}
+.btn_03{ background:#fff; border:solid 5px #33CC99; right:25px; bottom:25px;}
+.btn_04{ background:#CFF; border:solid 5px #990000; right:25px; bottom:25px;}
+.show{ right:260px; bottom:25px; ransform:rotate(45deg); -webkit-transform:rotate(45deg)}
+.show2{ right:220px; bottom:100px; ransform:rotate(45deg); -webkit-transform:rotate(45deg)}
+.show3{ right:180px; bottom:175px; ransform:rotate(45deg); -webkit-transform:rotate(45deg)}
+.show4{ right:100px; bottom:225px; ransform:rotate(45deg); -webkit-transform:rotate(45deg)}
+.hide{ right:25px; bottom:25px;}
+.active2{ background:#000; border:solid 5px #fff; opacity:0.5; color:#fff;}
+/*ps*/
+.ps {
+  border: solid 3px #FCC;
+  background:url(images/01.png) no-repeat;
+  background-image: -moz-linear-gradient( 90deg, rgb(255,0,0) 0%, rgb(255,0,255) 15%, rgb(0,0,255) 33%, rgb(0,255,255) 49%, rgb(0,255,0) 67%, rgb(255,255,0) 84%, rgb(255,0,0) 100%);
+  background-image: -webkit-linear-gradient( 90deg, rgb(255,0,0) 0%, rgb(255,0,255) 15%, rgb(0,0,255) 33%, rgb(0,255,255) 49%, rgb(0,255,0) 67%, rgb(255,255,0) 84%, rgb(255,0,0) 100%);
+  background-image: -ms-linear-gradient( 90deg, rgb(255,0,0) 0%, rgb(255,0,255) 15%, rgb(0,0,255) 33%, rgb(0,255,255) 49%, rgb(0,255,0) 67%, rgb(255,255,0) 84%, rgb(255,0,0) 100%);
+  box-shadow: 2.5px 4.33px 5px 0px rgb( 6, 0, 1 );
+  position: absolute;
+  left: 53px;
+  top: 680px;
+  width: 186px;
+  height: 186px;
+  z-index: 3;
+  border-radius:50%;
+  margin-bottom:50px;
+}
+.a_1 {
+  background-color: rgb( 0, 0, 0 );
+  position: absolute;
+  left: 464px;
+  top: 460px;
+  width: 100px;
+  height: 100px;
+  z-index: 2; display:block;
+}
+.img_100 img{ width:100%; max-width:100%;}
+/*导航过渡效果*/
+.nav {
+  text-align: center;
+  margin-top: 8px;
+  cursor: default;
+  font-size: 13px;
+}
+
+.section-help, .section-release-notes, .section-eula {
+	margin-bottom: 24px;
+}
+
+.nav > li {
+  display: inline;
+  margin: 0 6px;
+}
+
+.nav-item {
+	opacity: 0.6;
+	position: relative;
+
+	-webkit-transition: opacity 0.2s ease-in-out 0s;
+	-moz-transition: opacity 0.2s ease-in-out 0s;
+	transition: opacity 0.2s ease-in-out 0s;
+}
+
+.nav-item:before {
+	content: "";
+	position: absolute;
+	bottom: -2px;
+	width: 100%;
+	height: 1px;
+	z-index: 10;
+	background-color: #fff;
+	-webkit-transform: scaleX(0);
+	-moz-transform: scaleX(0);
+    transform: scaleX(0);
+	-webkit-transition: all 0.2s ease-in-out 0s;
+	-moz-transition: all 0.2s ease-in-out 0s;
+	/* transition: all 0.2s ease-in-out 0s; */
+}
+
+.nav-item:hover {
+	opacity: 1;
+}
+
+.nav-item:hover:before {
+	-webkit-transform: scaleX(1);
+	-moz-transform: scaleX(1);
+	transform: scaleX(1);
+}
+
+.section-home > li > .nav-home, .section-help > li > .nav-help, .section-release-notes > li > .nav-release-notes {
+  opacity: 1;
+  padding: 0;
+}
+
+.section-home > li > .nav-home:before, .section-help > li > .nav-help:before, .section-release-notes > li > .nav-release-notes:before {
+  opacity: 1;
+
+  -webkit-transform: scaleX(1);
+  -moz-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+
+</style>
+</head>
+
+<body>
+<ul class="nav section-release-notes">
+        <li><a class="nav-home nav-item" href="index.html">Overview</a></li>
+        <li><a class="nav-help nav-item" href="help.html">Help</a></li>
+        <li><a class="nav-release-notes nav-item" href="release-notes.html">Release Notes</a></li>
+      </ul>
+
+
+<div class="img_100"><img src="images/banner4-3.png" /></div>
+<h1>ps中复制css</h1>
+<div class="ps"></div>
+<div class="a_1">q</div>
+<!--<div class="btn"><span class="a"></span></div>
+<div class="big">
+<div class="nav_01"></div>
+<div class="nav_02"></div>
+<div class="nav_03"></div>
+<div class="nav_04"></div>
+</div>-->
+<h1>transtion 过渡 转换</h1>
+<div class="wrap">
+<div class="menu"><img src="images/menu.png" /><span class="show"></span></div>
+<div class="menu_btn btn_01">首页</div>
+<div class="menu_btn btn_02">产品</div>
+<div class="menu_btn btn_03">介绍</div>
+<div class="menu_btn btn_04">联系</div>
+</div>
+<script>
+
+window.onload=function(){
+	
+	$('.btn').click(function(){
+	 var span = $(this).find("span");
+	 if(span.hasClass('a')){
+			$('.nav_01').addClass('nav_01_hover').hover(function(){$(this).addClass('active')}).mouseleave(function(){$(this).removeClass('active')});
+			$('.nav_02').addClass('nav_02_hover').hover(function(){$(this).addClass('active')}).mouseleave(function(){$(this).removeClass('active')});
+			$('.nav_03').addClass('nav_03_hover').hover(function(){$(this).addClass('active')}).mouseleave(function(){$(this).removeClass('active')});
+			$('.nav_04').addClass('nav_04_hover').hover(function(){$(this).addClass('active')}).mouseleave(function(){$(this).removeClass('active')});
+			span.removeClass('a');
+	}else{
+	 	$('.nav_01').removeClass('nav_01_hover').addClass('close');
+			$('.nav_02').addClass('nav_02_hover').hover(function(){$(this).addClass('active')}).mouseleave(function(){$(this).removeClass('active')});
+			$('.nav_03').addClass('nav_03_hover').hover(function(){$(this).addClass('active')}).mouseleave(function(){$(this).removeClass('active')});
+			$('.nav_04').addClass('nav_04_hover').hover(function(){$(this).addClass('active')}).mouseleave(function(){$(this).removeClass('active')});
+			span.addClass('a');
+	}
+	
+	
+	})
+}
+</script>
+<script>
+//$('.menu').click(function(){alert(1)})
+$('.menu').click(function(){
+ if($('.menu>span').hasClass('show')){
+    $('.menu>span').removeClass('show');
+	$('.btn_01').removeClass('hide').addClass('show').hover(function(){$(this).addClass('active2')}).mouseleave(function() {
+    $(this).removeClass('active2')}); 
+	$('.btn_02').removeClass('hide').addClass('show2').hover(function(){$(this).addClass('active2')}).mouseleave(function() {
+    $(this).removeClass('active2')}); 
+	$('.btn_03').removeClass('hide').addClass('show3').hover(function(){$(this).addClass('active2')}).mouseleave(function() {
+    $(this).removeClass('active2')}); 
+	$('.btn_04').removeClass('hide').addClass('show4').hover(function(){$(this).addClass('active2')}).mouseleave(function() {
+    $(this).removeClass('active2')}); 
+ }else{
+	$('.menu>span').addClass('show');
+  	$('.btn_01').removeClass('show').addClass('hide');  
+	$('.btn_02').removeClass('show2').addClass('hide'); 
+	$('.btn_03').removeClass('show3').addClass('hide');  
+	$('.btn_04').removeClass('show4').addClass('hide');  
+ }	
+})
+</script>
+</body>
+</html>
