@@ -4,7 +4,7 @@ body, div, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dd, dt, img, form {
 	padding: 0px;
 	margin: 0px;
 	border: 0;
-	font-size: 12px;
+	font-size: 100%;
 	
 }
 h1, h2, h3, h4, h5, h6 {
